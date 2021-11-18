@@ -1,70 +1,15 @@
-# Chrome Extension TypeScript Starter
+# 中国大学全国排名chrome插件
 
-![build](https://github.com/chibat/chrome-extension-typescript-starter/workflows/build/badge.svg)
+支持在boss直聘和moka平台上，hover到学校上时，显示出学校的全国排名。支持600多所高校的排名。
 
-Chrome Extension, TypeScript and Visual Studio Code
+![demo图](./assets/extension_demo.jpg)
 
-## Prerequisites
-
-* [node + npm](https://nodejs.org/) (Current Version)
-
-## Option
-
-* [Visual Studio Code](https://code.visualstudio.com/)
-
-## Includes the following
-
-* TypeScript
-* Webpack
-* React
-* Jest
-* Example Code
-    * Chrome Storage
-    * Options Version 2
-    * content script
-    * count up badge number
-    * background
-
-## Project Structure
-
-* src/typescript: TypeScript source files
-* src/assets: static files
-* dist: Chrome Extension directory
-* dist/js: Generated JavaScript files
-
-## Setup
+## 安装
 
 ```
-npm install
+git clone git@github.com:FreeJoe/college_ranking.git
 ```
 
-## Import as Visual Studio Code project
+把代码库下载到本地后，打开chrome浏览器的“扩展程序”页面。将右上角的“开发者模式”打开。
 
-...
-
-## Build
-
-```
-npm run build
-```
-
-## Build in watch mode
-
-### terminal
-
-```
-npm run watch
-```
-
-### Visual Studio Code
-
-Run watch mode.
-
-type `Ctrl + Shift + B`
-
-## Load extension to chrome
-
-Load `dist` directory
-
-## Test
-`npx jest` or `npm run test`
+再点击左上角的“加载已解压的扩展程序”，选择代码库中的 dist 文件夹。
