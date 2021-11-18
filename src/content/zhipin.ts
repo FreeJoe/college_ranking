@@ -8,10 +8,8 @@ export default function initZhiPin() {
     const $container = $(this);
     const text = $container.text();
     const collegeName = getCollegeName(text);
-    console.log(collegeName);
     const ranking = getCollegeRanking(collegeName);
     const content = ranking ? ranking.toString() : '暂无排名';
-    console.log(111, content);
     showPopup(content, { x: e.clientX, y: e.clientY });
   });
 
