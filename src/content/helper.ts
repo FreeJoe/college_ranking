@@ -13,6 +13,7 @@ export function getCollegeRanking(collegeName: string) {
 const POPUP_CONTAINER_CLASS = 'chrome-plugin-college-ranking-container';
 
 export function showPopup(text: string, pos: { x: number, y: number}) {
+  hidePopup();
   const $div = $(`<div class="${POPUP_CONTAINER_CLASS}">`)
   $div.text(text);
   const OFFSET = 20;
