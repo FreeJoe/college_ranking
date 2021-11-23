@@ -4,6 +4,7 @@ import { getCollegeRanking, hidePopup, showPopup } from './helper';
 export default function initZhiPin() {
   const $document = $(document);
 
+  // 推荐页面
   $document.on('mouseenter', '.edu-exp-box .exp-content', function(e) {
     const $container = $(this);
     const text = $container.text();
@@ -16,6 +17,24 @@ export default function initZhiPin() {
   $document.on('mouseleave', '.edu-exp-box .exp-content', function(e) {
     hidePopup();
   });
+
+  // 搜索页面
+  $document.on('mouseenter', '.edu-exp-box', function(e) {
+    const $container = $(this).find('li span:eq(1)');
+    console.log('----');
+    const text = $container.text();
+    const collegeName = getCollegeName(text);
+    console.log(text);
+    console.log(collegeName);
+    const ranking = getCollegeRanking(collegeName);
+    const content = ranking ? ranking.toString() : '暂无排名';
+    showPopup(content, { x: e.clientX, y: e.clientY });
+  });
+
+  $document.on('mouseleave', '.edu-exp-box', function(e) {
+    hidePopup();
+  });
+
 }
 
 /**
